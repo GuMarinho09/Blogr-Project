@@ -1,0 +1,19 @@
+:root {
+    /* Color Palette */
+    /* Primary */
+    --cta-text: hsl(356, 100%, 66%);
+    --cta-hover-bg: hsl(355, 100%, 74%);
+    --headings: hsl(208, 49%, 24%);
+
+    /* Neutral */
+    --text: hsl(0, 0%, 100%);
+    --footer-text: hsl(240, 2%, 79%);
+    --body: hsl(207, 13%, 34%);
+    --footer-bg: hsl(240, 10%, 16%);
+
+    /* Gradients */
+    --bg-gradient: hsl(237, 17%, 21%);
+    --bg-gradient-two: hsl(237, 23%, 32%);
+    --intro: hsl(13, 100%, 72%);
+    --intro-two: hsl(353, 100%, 62%);
+}
