@@ -6,7 +6,7 @@
   --headings: hsl(208, 49%, 24%);
 
   /* Neutral */
-  --text: hsl(0, 0%, 100%);
+  --neutral: hsl(0, 0%, 100%);
   --footer-text: hsl(240, 2%, 79%);
   --body: hsl(207, 13%, 34%);
   --footer-bg: hsl(240, 10%, 16%);
@@ -67,5 +67,49 @@ p {
 
   h3 {
     font-size: 2.4rem;
+  }
+}
+
+/* Buttons */
+.btn {
+  background: none;
+  padding: 1.2rem 4vw;
+  outline: 0;
+  border: 0;
+  border-radius: 40px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+}
+
+.btn--neutral {
+  color: var(--cta-text);
+  background: var(--neutral);
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn--neutral:hover {
+  background: var(--cta-hover-bg);
+  color: var(--neutral);
+}
+
+.btn--outline {
+  border: 2px solid var(--neutral);
+  background: none;
+  transition: background 0.3s, color 0.3s;
+  color: var(--neutral);
+}
+
+.btn--outline:hover {
+  background: var(--neutral);
+  color: var(--cta-text);
+}
+
+@media screen and (min-width: 768px) {
+  .btn {
+    padding: 1.2rem 2vw;
+    font-size: 1.6rem;
   }
 }
