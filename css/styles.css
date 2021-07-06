@@ -1,19 +1,71 @@
 :root {
-    /* Color Palette */
-    /* Primary */
-    --cta-text: hsl(356, 100%, 66%);
-    --cta-hover-bg: hsl(355, 100%, 74%);
-    --headings: hsl(208, 49%, 24%);
+  /* Color Palette */
+  /* Primary */
+  --cta-text: hsl(356, 100%, 66%);
+  --cta-hover-bg: hsl(355, 100%, 74%);
+  --headings: hsl(208, 49%, 24%);
 
-    /* Neutral */
-    --text: hsl(0, 0%, 100%);
-    --footer-text: hsl(240, 2%, 79%);
-    --body: hsl(207, 13%, 34%);
-    --footer-bg: hsl(240, 10%, 16%);
+  /* Neutral */
+  --text: hsl(0, 0%, 100%);
+  --footer-text: hsl(240, 2%, 79%);
+  --body: hsl(207, 13%, 34%);
+  --footer-bg: hsl(240, 10%, 16%);
 
-    /* Gradients */
-    --bg-gradient: hsl(237, 17%, 21%);
-    --bg-gradient-two: hsl(237, 23%, 32%);
-    --intro: hsl(13, 100%, 72%);
-    --intro-two: hsl(353, 100%, 62%);
+  /* Gradients */
+  --bg-gradient: hsl(237, 17%, 21%);
+  --bg-gradient-two: hsl(237, 23%, 32%);
+  --intro: hsl(13, 100%, 72%);
+  --intro-two: hsl(353, 100%, 62%);
+}
+
+/* Typography */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  color: var(--body);
+  font-family: "Overpass", Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--headings);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2.3rem;
+}
+
+p {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 1.6rem;
+  }
+
+  h1 {
+    font-size: 3.6rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+  }
 }
