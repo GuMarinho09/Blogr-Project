@@ -209,6 +209,11 @@ a {
   opacity: 1;
 }
 
+.collapsible--expanded + .collapsible__content {
+  max-height: 100vh;
+  opacity: 1;
+}
+
 .collapsible__toggler {
   transform: rotate(0) translateY(-0.2rem);
   margin-left: 0.5rem;
@@ -224,4 +229,57 @@ a {
 .card {
   border-radius: 15px;
   padding: 2.5rem 2.3rem 2rem;
+}
+
+/* Navigation Bar */
+.nav {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 3rem 2rem 2rem;
+}
+
+.nav .collapsible__heading {
+  color: var(--headings);
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.collapsible--expanded .nav__links {
+  background: #efeff1;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.nav__main {
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+}
+
+.nav__links li {
+  color: var(--headings);
+  font-weight: 600;
+  opacity: 0.8;
+  padding: 0.5rem 0;
+}
+
+.nav .card {
+  align-items: center;
+  background: var(--neutral);
+  border-radius: 5px;
+  display: flex;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin: 0 auto;
+  width: 80%;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .nav .collapsible__heading {
+    color: var(--neutral);
+  }
 }
