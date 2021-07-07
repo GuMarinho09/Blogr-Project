@@ -162,3 +162,25 @@ p {
 .block--radius-tr {
   border-top-right-radius: 100px;
 }
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 65%;
+  }
+
+  .container--center {
+    margin: 0 auto;
+  }
+
+  .container--bigger {
+    max-width: 80%;
+  }
+
+  .container--left {
+    margin-left: auto;
+  }
+
+  .container--right {
+    margin-right: auto;
+  }
+}
