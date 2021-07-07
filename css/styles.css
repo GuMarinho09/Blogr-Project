@@ -184,3 +184,37 @@ p {
     margin-right: auto;
   }
 }
+
+/* Links */
+a {
+  text-decoration: none;
+}
+
+/* Collapsibles */
+.collapsible__heading {
+  color: var(--neutral);
+}
+
+.collapsible__content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  color: #76757a;
+  transition: all 0.3s;
+}
+
+.collapsible--expanded .collapsible__content {
+  max-height: 100vh;
+  opacity: 1;
+}
+
+.collapsible__toggler {
+  transform: rotate(0) translateY(-0.2rem);
+  margin-left: 0.5rem;
+  transition: transform 0.3s;
+}
+
+.collapsible--expanded .collapsible__toggler {
+  transform: rotate(-180deg) translateY(0.2rem);
+  margin-left: 0.5rem;
+}
