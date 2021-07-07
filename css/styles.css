@@ -109,7 +109,56 @@ p {
 
 @media screen and (min-width: 768px) {
   .btn {
-    padding: 1.2rem 2vw;
+    padding: 1.2rem 1vw;
     font-size: 1.6rem;
   }
+}
+
+/* Grids */
+.grid {
+  display: grid;
+}
+
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--1x3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* List */
+.list {
+  list-style: none;
+}
+
+.list--inline {
+  display: inline-block;
+}
+
+/* Blocks */
+.block {
+  padding: 2.5rem 2rem;
+}
+
+.block--orange {
+  background-image: linear-gradient(to right, var(--intro), var(--intro-two));
+}
+
+.block--dark {
+  background-image: linear-gradient(
+    to right,
+    var(--bg-gradient) 15%,
+    var(--bg-gradient-two) 50%
+  );
+}
+
+.block--radius-bl {
+  border-bottom-left-radius: 100px;
+}
+
+.block--radius-tr {
+  border-top-right-radius: 100px;
 }
