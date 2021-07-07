@@ -215,6 +215,6 @@ a {
 }
 
 .collapsible--expanded .collapsible__toggler {
-  transform: rotate(-180deg) translateY(0.2rem);
+  transform: translateY(-0.2rem) rotate(-180deg);
   margin-left: 0.5rem;
 }
