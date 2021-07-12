@@ -19,6 +19,13 @@
 }
 
 /* Typography */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 html {
   font-size: 62.5%;
 }
@@ -105,6 +112,10 @@ p {
 .btn--outline:hover {
   background: var(--neutral);
   color: var(--cta-text);
+}
+
+.btn--gradient {
+  background-image: linear-gradient(to right, var(--intro), var(--intro-two));
 }
 
 @media screen and (min-width: 768px) {
@@ -205,12 +216,12 @@ a {
 }
 
 .collapsible--expanded .collapsible__content {
-  max-height: 100vh;
+  max-height: 200vh;
   opacity: 1;
 }
 
 .collapsible--expanded + .collapsible__content {
-  max-height: 100vh;
+  max-height: 200vh;
   opacity: 1;
 }
 
@@ -241,6 +252,10 @@ a {
 }
 
 .nav .collapsible__heading {
+  cursor: pointer;
+}
+
+.nav .collapsible__heading {
   color: var(--headings);
   font-weight: 600;
   margin: 1rem 0;
@@ -256,14 +271,22 @@ a {
 .nav__main {
   margin: 0 auto;
   text-align: center;
-  width: 80%;
+  width: 100%;
 }
 
 .nav__links li {
-  color: var(--headings);
   font-weight: 600;
   opacity: 0.8;
   padding: 1rem 0;
+  transition: opacity 0.3s;
+}
+
+.nav__links li:hover {
+  opacity: 1;
+}
+
+.nav__links a {
+  color: var(--headings);
 }
 
 .nav .card {
@@ -271,9 +294,15 @@ a {
   background: var(--neutral);
   border-radius: 5px;
   display: flex;
-  margin: 2.5rem auto 1rem;
-  width: 80%;
+  padding: 0;
+  width: 90%;
   flex-direction: column;
+  margin: 0 auto;
+}
+
+.collapsible--expanded + .card.collapsible__content {
+  margin: 2.5rem auto 1rem;
+  padding: 2.5rem 2.3rem 2rem;
 }
 
 .nav__collapsible-link {
@@ -292,6 +321,7 @@ a {
   animation-name: hamburger;
   animation-fill-mode: forwards;
   animation-duration: 0.3s;
+  cursor: pointer;
 }
 
 .hamburger--closed {
@@ -305,6 +335,41 @@ a {
 .nav__collapsible-link-toggler {
   margin: initial;
   width: initial;
+}
+
+.nav__login {
+  align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.8rem;
+  padding-top: 1rem;
+  border-top: 1px solid #cccccc;
+}
+
+.nav__login :first-child,
+.nav__login a:nth-child(2) {
+  font-size: inherit;
+  font-weight: 600;
+  font-family: "Overpass", Arial, Helvetica, sans-serif;
+}
+
+.nav__login :first-child {
+  color: var(--headings);
+  text-align: center;
+}
+
+.nav__login a:nth-child(2) {
+  color: var(--neutral);
+  padding: 1rem 4rem;
+}
+
+.nav__arrow-toggler {
+  display: inline-block;
+  width: 10px;
+  height: 7px;
+  background-image: url(../images/icon-arrow-dark.svg);
+  background-repeat: no-repeat;
 }
 
 @keyframes hamburger {
@@ -330,15 +395,111 @@ a {
 @media screen and (max-width: 215px) {
   .nav {
     justify-content: center;
+    font-size: 1.2rem;
   }
 }
 
 @media screen and (min-width: 768px) {
+  .nav {
+    flex-wrap: nowrap;
+  }
+
   .nav .collapsible__heading {
     color: var(--neutral);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color 0.3s;
+  }
+
+  .nav .collapsible__heading:hover {
+    text-decoration-color: var(--neutral);
+  }
+
+  .nav .card {
+    background: none;
+    max-height: 100vh;
+    opacity: 1;
+    flex-direction: row;
+    margin-left: 0;
+    margin-right: 0;
+    overflow: visible;
   }
 
   .hamburger {
     display: none;
+  }
+
+  .nav__logo {
+    align-self: flex-start;
+    transform: translateY(-1px);
+  }
+
+  .nav__collapsible-link-toggler {
+    position: relative;
+    display: inline-block;
+    margin-right: 2.5rem;
+  }
+
+  .nav__arrow-toggler {
+    background-image: url(../images/icon-arrow-light.svg);
+  }
+
+  .nav__login {
+    flex-direction: row;
+    padding-top: 0;
+    margin-top: 0;
+    border: 0;
+    width: auto;
+  }
+
+  .nav__main {
+    align-self: flex-start;
+    width: auto;
+    margin: initial;
+    margin-right: auto;
+    margin-left: 3.5vw;
+  }
+
+  .nav__login :first-child,
+  .nav__login a:nth-child(2) {
+    font-weight: 600;
+  }
+
+  .nav__login :first-child {
+    color: var(--neutral);
+  }
+
+  .nav__login a:nth-child(2) {
+    color: var(--cta-text);
+    background: var(--neutral);
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .nav__login a:nth-child(2):hover {
+    color: var(--neutral);
+    background: var(--cta-hover-bg);
+  }
+
+  .collapsible__content.nav__links {
+    position: absolute;
+    width: 200%;
+  }
+
+  .collapsible--expanded + .card.collapsible__content {
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav__collapsible-link li {
+    text-align: left;
+    margin-left: 2rem;
+  }
+
+  .nav__collapsible-link a {
+    color: var(--footer-bg);
+  }
+
+  .nav__collapsible-link li:hover {
+    opacity: 1;
   }
 }
