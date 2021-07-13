@@ -44,7 +44,7 @@ h3 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.49rem;
 }
 
 h2 {
@@ -65,7 +65,7 @@ p {
   }
 
   h1 {
-    font-size: 3.6rem;
+    font-size: 6rem;
   }
 
   h2 {
@@ -80,7 +80,7 @@ p {
 /* Buttons */
 .btn {
   background: none;
-  padding: 1.2rem 4vw;
+  padding: 1rem 4vw;
   outline: 0;
   border: 0;
   border-radius: 40px;
@@ -120,8 +120,14 @@ p {
 
 @media screen and (min-width: 768px) {
   .btn {
-    padding: 1.2rem 1vw;
+    padding: 1.2rem 1.5vw;
     font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .btn {
+    padding: 1.2rem 1vw;
   }
 }
 
@@ -244,11 +250,18 @@ a {
 
 /* Navigation Bar */
 .nav {
+  width: 100%;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 3rem 2rem 2rem;
+  position: absolute;
+  z-index: 999;
+}
+
+.header {
+  position: relative;
 }
 
 .nav .collapsible__heading {
@@ -295,9 +308,10 @@ a {
   border-radius: 5px;
   display: flex;
   padding: 0;
-  width: 90%;
+  width: 99%;
   flex-direction: column;
   margin: 0 auto;
+  box-shadow: 0 0 20px 10px rgba(53, 53, 53, 0.356);
 }
 
 .collapsible--expanded + .card.collapsible__content {
@@ -423,6 +437,7 @@ a {
     margin-left: 0;
     margin-right: 0;
     overflow: visible;
+    box-shadow: none;
   }
 
   .hamburger {
@@ -501,5 +516,97 @@ a {
 
   .nav__collapsible-link li:hover {
     opacity: 1;
+  }
+
+  .collapsible--expanded .nav__links {
+    background: var(--neutral);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .nav {
+    padding-left: 16rem;
+    padding-right: 16rem;
+  }
+}
+
+/* Hero */
+.hero {
+  padding-top: 14.7rem;
+  padding-bottom: 13rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+    85deg,
+    var(--intro) 40%,
+    var(--intro-two) 80%
+  );
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  background-image: url(../images/bg-pattern-intro.svg);
+  background-repeat: no-repeat;
+  background-position: 35% 40%;
+  background-size: 300%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom-left-radius: 100px;
+  opacity: 0.5;
+}
+
+.hero__container {
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero h1,
+.hero__text {
+  color: var(--neutral);
+  text-align: center;
+}
+
+.hero h1 {
+  margin-bottom: 0;
+}
+
+.hero__text {
+  padding-left: 7%;
+  padding-right: 7%;
+  margin-bottom: 4.3rem;
+}
+
+.hero__btn-wrapper {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__btn-wrapper :first-child,
+.hero__btn-wrapper a:nth-child(2) {
+  margin-right: 0.8rem;
+}
+
+@media screen and (max-width: 202px) {
+  .hero__btn-wrapper {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    padding-top: 23.3rem;
+  }
+
+  .hero::before {
+    background-position: 20% 50%;
+    background-size: 150%;
   }
 }
