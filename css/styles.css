@@ -32,7 +32,7 @@ html {
 
 body {
   font-size: 1.8rem;
-  line-height: 1.5;
+  line-height: 2;
   color: var(--body);
   font-family: "Overpass", Arial, Helvetica, sans-serif;
 }
@@ -48,7 +48,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 h3 {
@@ -69,7 +69,7 @@ p {
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
   h3 {
@@ -136,13 +136,9 @@ p {
   display: grid;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .grid--1x2 {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .grid--1x3 {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -191,7 +187,7 @@ p {
   }
 
   .container--bigger {
-    max-width: 80%;
+    max-width: 92%;
   }
 
   .container--left {
@@ -608,5 +604,111 @@ a {
   .hero::before {
     background-position: 20% 50%;
     background-size: 150%;
+  }
+}
+
+/* Features */
+.features h2 {
+  text-align: center;
+}
+
+.features {
+  text-align: center;
+  padding-top: 15rem;
+}
+
+.features--right {
+  padding-top: 20rem;
+}
+
+.features__image-mobile {
+  width: 100%;
+  order: -2;
+}
+
+.features__image-desktop {
+  display: none;
+}
+
+@media screen and (min-width: 650px) {
+  .features__image-mobile {
+    width: 70%;
+    justify-self: center;
+  }
+}
+
+@media screen and (min-width: 860px) {
+  .features__image-mobile {
+    width: 60%;
+  }
+
+  .features .features__item-text p {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .features {
+    text-align: left;
+    overflow-x: hidden;
+  }
+
+  .features__image-mobile {
+    display: none;
+  }
+
+  .features__item-text #features--right__first-heading {
+    margin-top: 0;
+  }
+
+  .features--right .features__image-desktop {
+    order: -1;
+    left: -5%;
+    right: initial;
+  }
+
+  .features__image-desktop {
+    display: inline-block;
+    width: 125%;
+    right: -30%;
+    top: -6.5%;
+    position: relative;
+    justify-self: end;
+    align-self: center;
+  }
+
+  .features__content-text :first-child {
+    margin-top: 5rem;
+  }
+
+  .features .features__item-text p {
+    padding-left: initial;
+    padding-right: 30%;
+  }
+
+  .features--right .features__item-text p {
+    padding-right: 15%;
+  }
+
+  .features__content-text.grid {
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1341px) {
+  .features__image-desktop {
+    top: initial;
+    align-self: flex-start;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .features__image-desktop {
+    top: -20%;
+  }
+
+  .features__content-text.grid {
+    grid-template-rows: 1fr 1.8fr;
   }
 }
