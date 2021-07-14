@@ -934,3 +934,10 @@ a {
     text-align: left;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .footer .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
