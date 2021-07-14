@@ -167,9 +167,9 @@ p {
 
 .block--dark {
   background-image: linear-gradient(
-    to right,
-    var(--bg-gradient) 15%,
-    var(--bg-gradient-two) 50%
+    150deg,
+    var(--bg-gradient) 35%,
+    var(--bg-gradient-two) 75%
   );
 }
 
@@ -714,6 +714,143 @@ a {
 
   .features__content-text.grid {
     grid-template-rows: 1fr 1.8fr;
+  }
+}
+
+/* Showcase */
+.showcase {
+  text-align: center;
+  color: var(--neutral);
+  position: relative;
+  border-bottom-left-radius: 80px;
+  border-top-right-radius: 80px;
+}
+
+.showcase h2 {
+  color: var(--neutral);
+}
+
+.showcase::before {
+  content: "";
+  position: absolute;
+  background-image: url(../images/bg-pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-size: 400px;
+  background-position: 50% -100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 100px;
+}
+
+.showcase .container {
+  position: relative;
+}
+
+.showcase .grid {
+  margin-top: 10rem;
+}
+
+.showcase__content-text {
+  align-self: center;
+}
+
+.showcase__image {
+  width: 80%;
+  position: absolute;
+  transform: translateY(-85%) translateX(-50%);
+  left: 50%;
+}
+
+@media screen and (max-width: 250px) {
+  .showcase::before {
+    background-position: 50% -50%;
+  }
+}
+
+@media screen and (min-width: 510px) {
+  .showcase::before {
+    background-size: 500px;
+    background-position: 50% 150%;
+  }
+
+  .showcase__image {
+    width: 65%;
+  }
+}
+
+@media screen and (min-width: 633px) {
+  .showcase__image {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .showcase__content-text p {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .showcase {
+    text-align: left;
+  }
+
+  .showcase::before {
+    background-size: 700px;
+    background-position: 0 89%;
+  }
+
+  .showcase .container {
+    max-width: 80%;
+  }
+
+  .showcase__image {
+    width: 50%;
+    left: 20%;
+    transform: translateY(-5%) translateX(-50%);
+  }
+
+  .showcase .grid {
+    grid-template-rows: initial;
+    margin-top: initial;
+  }
+
+  .showcase__content-text p {
+    padding-left: initial;
+    padding-right: initial;
+  }
+
+  .showcase__content-text {
+    grid-column: 2;
+    align-self: initial;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .showcase__image {
+    transform: translateY(-10%) translateX(-50%);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .showcase__image {
+    transform: translateY(-20%) translateX(-50%);
+  }
+}
+
+@media screen and (min-width: 1308px) {
+  .showcase__image {
+    transform: translateY(-25%) translateX(-50%);
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .showcase__image {
+    width: 30%;
   }
 }
 
