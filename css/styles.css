@@ -84,7 +84,7 @@ p {
 /* Buttons */
 .btn {
   background: none;
-  padding: 1rem 4vw;
+  padding: 0.5rem 4vw;
   outline: 0;
   border: 0;
   border-radius: 40px;
@@ -124,14 +124,14 @@ p {
 
 @media screen and (min-width: 768px) {
   .btn {
-    padding: 1.2rem 1.5vw;
+    padding: 0.5rem 1.5vw;
     font-size: 1.6rem;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .btn {
-    padding: 1.2rem 1vw;
+    padding: 0.5rem 1vw;
   }
 }
 
@@ -365,7 +365,7 @@ a {
 .nav__login a:nth-child(2) {
   font-size: inherit;
   font-weight: 600;
-  font-family: "Overpass", Arial, Helvetica, sans-serif;
+  font-family: "Ubuntu", Arial, Helvetica, sans-serif;
 }
 
 .nav__login :first-child {
@@ -375,7 +375,7 @@ a {
 
 .nav__login a:nth-child(2) {
   color: var(--neutral);
-  padding: 1rem 4rem;
+  padding: 0.5rem 4rem;
 }
 
 .nav__arrow-toggler {
@@ -622,7 +622,8 @@ a {
 }
 
 .features--right {
-  padding-top: 20rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 .features__image-mobile {
@@ -656,6 +657,12 @@ a {
   .features {
     text-align: left;
     overflow-x: hidden;
+  }
+
+  .features--right {
+    margin-top: 10rem;
+    padding-top: 5vw;
+    padding-bottom: initial;
   }
 
   .features__image-mobile {
@@ -712,6 +719,10 @@ a {
     top: -20%;
   }
 
+  .features--right {
+    padding-top: 10vw;
+  }
+
   .features__content-text.grid {
     grid-template-rows: 1fr 1.8fr;
   }
@@ -724,6 +735,7 @@ a {
   position: relative;
   border-bottom-left-radius: 80px;
   border-top-right-radius: 80px;
+  margin-top: 20rem;
 }
 
 .showcase h2 {
@@ -771,6 +783,10 @@ a {
 }
 
 @media screen and (min-width: 510px) {
+  .showcase {
+    margin-top: 25rem;
+  }
+
   .showcase::before {
     background-size: 500px;
     background-position: 50% 150%;
@@ -788,6 +804,10 @@ a {
 }
 
 @media screen and (min-width: 768px) {
+  .showcase {
+    margin-top: 29rem;
+  }
+
   .showcase__content-text p {
     padding-left: 10%;
     padding-right: 10%;
@@ -797,6 +817,7 @@ a {
 @media screen and (min-width: 1024px) {
   .showcase {
     text-align: left;
+    margin-top: initial;
   }
 
   .showcase::before {
@@ -863,6 +884,14 @@ a {
 .footer a {
   color: var(--neutral);
   opacity: 0.65;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.3s;
+}
+
+.footer a:hover {
+  opacity: 1;
+  text-decoration-color: var(--neutral);
 }
 
 .footer .footer__item:nth-child(2) :first-child {
